@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
 		<Nullable>enable</Nullable>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
 	</PropertyGroup>
 
 	<ItemGroup>

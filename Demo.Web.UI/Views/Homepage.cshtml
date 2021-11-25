@@ -1,0 +1,10 @@
+﻿@inherits UmbracoViewPage<Homepage>
+@{
+	Layout = "Layout.cshtml";
+}
+
+<p>This is a different homepage!</p>
+
+<vc:image-carousel slides="Model.Images"></vc:image-carousel>
+
+@Html.GetGridHtml(Model, "grid")

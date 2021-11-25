@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+		<Nullable>enable</Nullable>
         <DefaultItemExcludes>$(DefaultItemExcludes);App_Plugins/**;</DefaultItemExcludes>
         <DefaultItemExcludes>$(DefaultItemExcludes);umbraco/**;</DefaultItemExcludes>
         <DefaultItemExcludes>$(DefaultItemExcludes);wwwroot/media/**;</DefaultItemExcludes>
@@ -34,6 +35,8 @@
     <ItemGroup>
       <ProjectReference Include="..\AnExampleRCL\AnExampleRCL.csproj" />
       <ProjectReference Include="..\Bootstrap5\Bootstrap5.csproj" />
+      <ProjectReference Include="..\Demo.Core\Demo.Core.csproj" />
+      <ProjectReference Include="..\Demo.Web.UI\Demo.Web.UI.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

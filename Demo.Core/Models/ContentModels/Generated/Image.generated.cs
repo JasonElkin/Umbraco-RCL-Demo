@@ -16,32 +16,32 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace Umbraco.Cms.Web.Common.PublishedModels
+namespace Demo.Core.Models.ContentModels
 {
-	/// <summary>Member</summary>
-	[PublishedModel("Member")]
-	public partial class Member : PublishedContentModel
+	/// <summary>Image</summary>
+	[PublishedModel("Image")]
+	public partial class Image : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		public new const string ModelTypeAlias = "Member";
+		public new const string ModelTypeAlias = "Image";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Member;
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Member, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Image, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Member(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public Image(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,53 +50,40 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Is Approved
+		/// Size: in bytes
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		[ImplementPropertyType("umbracoMemberApproved")]
-		public virtual bool UmbracoMemberApproved => this.Value<bool>(_publishedValueFallback, "umbracoMemberApproved");
+		[ImplementPropertyType("umbracoBytes")]
+		public virtual long UmbracoBytes => this.Value<long>(_publishedValueFallback, "umbracoBytes");
 
 		///<summary>
-		/// Comments
+		/// Type
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("umbracoMemberComments")]
-		public virtual string UmbracoMemberComments => this.Value<string>(_publishedValueFallback, "umbracoMemberComments");
+		[ImplementPropertyType("umbracoExtension")]
+		public virtual string UmbracoExtension => this.Value<string>(_publishedValueFallback, "umbracoExtension");
 
 		///<summary>
-		/// Failed Password Attempts
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		[ImplementPropertyType("umbracoMemberFailedPasswordAttempts")]
-		public virtual int UmbracoMemberFailedPasswordAttempts => this.Value<int>(_publishedValueFallback, "umbracoMemberFailedPasswordAttempts");
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("umbracoFile")]
+		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ImageCropperValue UmbracoFile => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ImageCropperValue>(_publishedValueFallback, "umbracoFile");
 
 		///<summary>
-		/// Last Lockout Date
+		/// Height: in pixels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		[ImplementPropertyType("umbracoMemberLastLockoutDate")]
-		public virtual global::System.DateTime UmbracoMemberLastLockoutDate => this.Value<global::System.DateTime>(_publishedValueFallback, "umbracoMemberLastLockoutDate");
+		[ImplementPropertyType("umbracoHeight")]
+		public virtual int UmbracoHeight => this.Value<int>(_publishedValueFallback, "umbracoHeight");
 
 		///<summary>
-		/// Last Login Date
+		/// Width: in pixels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		[ImplementPropertyType("umbracoMemberLastLogin")]
-		public virtual global::System.DateTime UmbracoMemberLastLogin => this.Value<global::System.DateTime>(_publishedValueFallback, "umbracoMemberLastLogin");
-
-		///<summary>
-		/// Last Password Change Date
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		[ImplementPropertyType("umbracoMemberLastPasswordChangeDate")]
-		public virtual global::System.DateTime UmbracoMemberLastPasswordChangeDate => this.Value<global::System.DateTime>(_publishedValueFallback, "umbracoMemberLastPasswordChangeDate");
-
-		///<summary>
-		/// Is Locked Out
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.1+bef1ccedca45b16a1a51178c45c2bec3302caf53")]
-		[ImplementPropertyType("umbracoMemberLockedOut")]
-		public virtual bool UmbracoMemberLockedOut => this.Value<bool>(_publishedValueFallback, "umbracoMemberLockedOut");
+		[ImplementPropertyType("umbracoWidth")]
+		public virtual int UmbracoWidth => this.Value<int>(_publishedValueFallback, "umbracoWidth");
 	}
 }

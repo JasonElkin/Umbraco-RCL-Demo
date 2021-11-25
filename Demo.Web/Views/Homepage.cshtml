@@ -7,3 +7,5 @@
 @*@await Component.InvokeAsync(typeof(ImageCarouselViewComponent), Model.Images)*@
 
 @*<vc:image-carousel slides="Model.Images"></vc:image-carousel> *@
+
+@Html.GetGridHtml(Model, "grid")
